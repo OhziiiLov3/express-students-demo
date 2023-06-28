@@ -28,3 +28,13 @@ const students = [
       "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNvZnR3YXJlJTIwZW5naW5lZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60",
   },
 ];
+
+
+module.exports ={
+    getAll: () =>{
+        return students;
+    },
+    getOne: (name) =>{
+        return students.find((student)=> student.name === name);
+    }
+}

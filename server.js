@@ -1,4 +1,5 @@
 const express = require('express');
+const studentsDb = require('./data/students');
 const app = express();
 
 const PORT = 3000;
@@ -20,6 +21,25 @@ app.get('/',(req,res)=>{
 app.get("/home", (req, res) => {
   res.render('home');
 });
+
+
+app.get('/students',(req,res)=>{
+    res.render("students/index",{
+        students: studentsDb.getAll()
+    })
+});
+
+
+app.get('/students/:name',(req,res)=>{
+    res.render('students/show',{
+        student: studentsDb.getOne(req.params.name)
+    });
+})
+
+
+
+
+
 
 
 
